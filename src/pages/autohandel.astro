@@ -5,24 +5,24 @@ import Showroom from '../components/Showroom.jsx';
 import FinanceCalculator from '../components/FinanceCalculator.jsx';
 import Footer from '../components/Footer.jsx';
 import Preloader from '../components/Preloader.jsx';
-import { Car, Sparkles, ShieldCheck } from 'lucide-react';
+import { Car } from 'lucide-react';
 ---
 
 <Layout title="Autohandel & Occasionen | Schossacher Garage Schweiz">
   <Preloader client:load />
   <Navbar client:load />
 
-  <main className="pt-28 pb-16">
-    <section className="py-16 relative bg-gradient-to-b from-[#07090e] via-[#0e1420] to-[#07090e] border-b border-white/5">
-      <div className="container text-center max-w-3xl space-y-4">
-        <div className="badge-amber mx-auto">
-          <Car className="w-4 h-4 text-[#F59E0B]" />
+  <main class="pt-28 pb-16">
+    <section class="py-16 relative bg-[#FEF9E7] border-b border-[#D4AF37]/20">
+      <div class="container text-center max-w-3xl space-y-4">
+        <div class="gold-badge mx-auto">
+          <Car className="w-4 h-4 text-[#785E07]" />
           <span>Geprüfte Qualität</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight font-serif">
-          Autohandel & <span className="text-amber-gradient">Occasionen</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-stone-900 tracking-tight font-serif">
+          Autohandel & <span class="text-gold-gradient">Occasionen</span>
         </h1>
-        <p className="text-slate-300 text-base md:text-lg">
+        <p class="text-stone-700 text-base md:text-lg font-semibold">
           Entdecken Sie unser aktuelles Angebot an qualitätsgeprüften Gebrauchtwagen, Sportwagen und Luxuslimousinen mit Schweizer Garantie.
         </p>
       </div>

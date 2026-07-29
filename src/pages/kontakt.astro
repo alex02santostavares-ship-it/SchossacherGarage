@@ -4,24 +4,24 @@ import Navbar from '../components/Navbar.jsx';
 import ContactSection from '../components/ContactSection.jsx';
 import Footer from '../components/Footer.jsx';
 import Preloader from '../components/Preloader.jsx';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 ---
 
 <Layout title="Kontakt & Anfahrt | Schossacher Garage Schweiz">
   <Preloader client:load />
   <Navbar client:load />
 
-  <main className="pt-28 pb-16">
-    <section className="py-16 relative bg-gradient-to-b from-[#07090e] via-[#0e1420] to-[#07090e] border-b border-white/5">
-      <div className="container text-center max-w-3xl space-y-4">
-        <div className="badge-cyber mx-auto">
-          <MapPin className="w-4 h-4 text-cyan-400" />
+  <main class="pt-28 pb-16">
+    <section class="py-16 relative bg-[#FEF9E7] border-b border-[#D4AF37]/20">
+      <div class="container text-center max-w-3xl space-y-4">
+        <div class="gold-badge mx-auto">
+          <MapPin className="w-4 h-4 text-[#785E07]" />
           <span>Aarau, Schweiz</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight font-serif">
-          Kontakt & <span className="text-cyan-gradient">Anfahrt</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-stone-900 tracking-tight font-serif">
+          Kontakt & <span class="text-gold-gradient">Anfahrt</span>
         </h1>
-        <p className="text-slate-300 text-base md:text-lg">
+        <p class="text-stone-700 text-base md:text-lg font-semibold">
           Vereinbaren Sie Ihren Termin online oder rufen Sie uns direkt an. Wir freuen uns auf Ihren Besuch.
         </p>
       </div>
