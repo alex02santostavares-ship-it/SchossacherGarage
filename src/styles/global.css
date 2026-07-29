@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,14 +16,14 @@
   --gold-dark: #785E07;
   --gold-light: #FEF08A;
 
-  --text-main: #1C1917;
+  --text-main: #18181B;
   --text-muted: #44403C;
 
   --border-gold-subtle: rgba(212, 175, 55, 0.3);
   --border-gold-strong: rgba(212, 175, 55, 0.6);
 
-  --font-serif: 'Cinzel', serif;
-  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
 }
 
@@ -39,11 +39,13 @@ html {
   background-color: var(--bg-primary);
   color: var(--text-main);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.6;
+  font-family: var(--font-sans);
   background-color: #FFFDF5;
   background-image: 
     radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
@@ -103,19 +105,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  font-family: var(--font-serif);
 }
 
 .text-yellow-gradient {
-  background: linear-gradient(135deg, #1C1917 0%, #785E07 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #18181B 0%, #785E07 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  font-family: var(--font-serif);
 }
 
 /* Pure Gold Buttons */
 .btn-gold {
   background: linear-gradient(135deg, #E6C200 0%, #D4AF37 50%, #C5A028 100%);
   color: #000000;
+  font-family: var(--font-sans);
   font-weight: 800;
   padding: 14px 28px;
   border-radius: 12px;
@@ -128,6 +133,7 @@ body {
   font-size: 0.95rem;
   transition: all 0.25s ease;
   box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  letter-spacing: 0.02em;
 }
 
 .btn-gold:hover {
@@ -139,6 +145,7 @@ body {
 .btn-outline-gold {
   background: #FFFFFF;
   color: #785E07;
+  font-family: var(--font-sans);
   font-weight: 800;
   padding: 13px 26px;
   border-radius: 12px;
@@ -150,6 +157,7 @@ body {
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.25s ease;
+  letter-spacing: 0.02em;
 }
 
 .btn-outline-gold:hover {
@@ -187,6 +195,7 @@ body {
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+  font-family: var(--font-sans);
 }
 
 .modal-overlay {
