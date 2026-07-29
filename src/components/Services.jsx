@@ -123,18 +123,18 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="section-padding relative bg-[#07080a]">
+    <section id="services" className="section-padding relative bg-[#0d0e12]">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="gold-badge mx-auto">
-            <Wrench className="w-4 h-4 text-[#D4AF37]" />
+            <Wrench className="w-4 h-4 text-[#FBBF24]" />
             <span>Meisterhafte Werkstattarbeiten</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
             Unsere <span className="text-gold-gradient font-serif">Werkstatt-Dienstleistungen</span>
           </h2>
-          <p className="text-slate-400 text-base md:text-lg">
+          <p className="text-slate-300 text-base md:text-lg">
             Von der routinemässigen Inspektion über komplexe Reparaturen bis hin zur MFK-Vorführung – bei Schossacher Garage ist Ihr Fahrzeug in besten Händen.
           </p>
         </div>
@@ -147,29 +147,29 @@ export default function Services() {
               <div 
                 key={srv.id}
                 onClick={() => setSelectedService(srv)}
-                className="glass-card p-6 flex flex-col justify-between cursor-pointer group hover:border-[#D4AF37]/50 transition-all duration-300"
+                className="glass-card-gold p-6 flex flex-col justify-between cursor-pointer group hover:border-[#FBBF24] transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-black transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-[#F59E0B] flex items-center justify-center text-[#FBBF24] group-hover:scale-110 group-hover:bg-[#FBBF24] group-hover:text-black transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] uppercase tracking-wider font-semibold text-[#D4AF37] bg-[#D4AF37]/10 px-2.5 py-1 rounded-full border border-[#D4AF37]/20">
+                    <span className="text-[11px] uppercase tracking-wider font-extrabold text-[#FBBF24] bg-amber-500/15 px-3 py-1 rounded-full border border-[#F59E0B]/40">
                       {srv.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FBBF24] transition-colors">
                     {srv.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
                     {srv.shortDesc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs font-mono font-semibold text-slate-300">{srv.price}</span>
-                  <span className="text-xs font-bold text-[#D4AF37] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-[#FEF08A]">{srv.price}</span>
+                  <span className="text-xs font-bold text-[#FBBF24] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Details <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -183,7 +183,7 @@ export default function Services() {
       {selectedService && (
         <div className="modal-overlay" onClick={() => setSelectedService(null)}>
           <div 
-            className="glass-card max-w-xl w-full p-8 relative animate-in zoom-in-95 duration-200 border-[#D4AF37]/40"
+            className="glass-card-gold max-w-xl w-full p-8 relative border-[#FBBF24]/60 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button 
@@ -194,25 +194,25 @@ export default function Services() {
             </button>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-[#D4AF37] text-black flex items-center justify-center font-bold">
-                {React.createElement(selectedService.icon, { className: 'w-8 h-8' })}
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FBBF24] to-[#F59E0B] text-black flex items-center justify-center font-bold">
+                {React.createElement(selectedService.icon, { className: 'w-8 h-8 stroke-[2.5]' })}
               </div>
               <div>
-                <span className="text-xs uppercase text-[#D4AF37] font-semibold tracking-wider">{selectedService.badge}</span>
+                <span className="text-xs uppercase text-[#FBBF24] font-bold tracking-wider">{selectedService.badge}</span>
                 <h3 className="text-2xl font-bold text-white font-serif">{selectedService.title}</h3>
               </div>
             </div>
 
-            <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+            <p className="text-slate-200 text-sm mb-6 leading-relaxed">
               {selectedService.shortDesc}
             </p>
 
             <div className="bg-white/5 rounded-xl p-5 mb-6 border border-white/10">
-              <h4 className="text-xs uppercase tracking-widest text-[#D4AF37] font-bold mb-3">Leistungsumfang</h4>
+              <h4 className="text-xs uppercase tracking-widest text-[#FBBF24] font-bold mb-3">Leistungsumfang</h4>
               <ul className="space-y-2.5">
                 {selectedService.details.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 text-sm text-slate-200">
-                    <Check className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#FBBF24] flex-shrink-0 stroke-[3]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -222,11 +222,11 @@ export default function Services() {
             <div className="flex items-center justify-between pt-2">
               <div>
                 <span className="text-xs text-slate-400 block">Richtpreis</span>
-                <span className="text-lg font-bold text-white font-mono">{selectedService.price}</span>
+                <span className="text-lg font-bold text-[#FBBF24] font-mono">{selectedService.price}</span>
               </div>
 
               <a 
-                href="#contact" 
+                href="/kontakt" 
                 onClick={() => setSelectedService(null)}
                 className="btn-gold text-decoration-none text-sm"
               >
