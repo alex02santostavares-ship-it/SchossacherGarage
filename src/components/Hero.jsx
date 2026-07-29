@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ArrowRight, Wrench, Car, Clock, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Wrench, Car, Clock, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -21,18 +21,6 @@ export default function Hero() {
           {/* Main Hero Copy */}
           <div className="lg:col-span-7 space-y-8">
             
-            {/* Badges Bar */}
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="gold-badge shadow-sm">
-                <Award className="w-4 h-4 text-[#785E07]" />
-                <span>Autowerkstatt & Autohandel Dübendorf</span>
-              </div>
-              <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEF08A] border border-[#D4AF37] text-[#785E07] text-xs font-extrabold">
-                <span className="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-                <span>Werkstatt Geöffnet • Im Schossacher 22</span>
-              </div>
-            </div>
-
             {/* Main Title */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1C1917] leading-[1.08]">
               Schweizer Präzision für Ihr Fahrzeug.{' '}
@@ -79,11 +67,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Showcase Card */}
+          {/* Right Showcase Card with User's Real Car Image */}
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="glass-card-gold p-6 border-[#D4AF37]/40 shadow-xl relative space-y-6">
-              <div className="relative h-64 rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-inner">
-                <img src="/images/porsche.jpg" alt="Schossacher Garage Showroom" className="w-full h-full object-cover" />
+              <div className="relative h-64 rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-inner bg-[#FEF9E7]">
+                <img src="/images/1.webp" alt="Porsche 911 GT3 RS Schossacher Garage" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <span className="absolute top-3 left-3 gold-badge !text-[10px] !py-1 !px-3 shadow-md">
                   <Sparkles className="w-3 h-3 text-[#785E07]" /> Aktuelles Highlight
