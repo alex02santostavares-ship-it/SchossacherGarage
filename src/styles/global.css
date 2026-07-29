@@ -5,24 +5,22 @@
 @tailwind utilities;
 
 :root {
-  /* Pure Metallic Gold & Champagne Light Theme (NO ORANGE!) */
-  --bg-primary: #FFFDF0;
-  --bg-secondary: #FEF9D7;
-  --bg-card: rgba(255, 254, 245, 0.96);
+  /* Pure Gold & Champagne Luxury Palette */
+  --bg-primary: #FFFDF5;
+  --bg-secondary: #FEF9E7;
+  --bg-card: #FFFFFF;
   --bg-card-hover: #FFFFFF;
 
-  --gold-pure: #FFD700;
-  --gold-metallic: #D4AF37;
-  --gold-dark: #856404;
-  --gold-deep: #B8860B;
+  --gold-pure: #D4AF37;
+  --gold-metallic: #C5A028;
+  --gold-dark: #785E07;
   --gold-light: #FEF08A;
 
   --text-main: #1C1917;
-  --text-muted: #57534E;
-  --text-gold-dark: #856404;
+  --text-muted: #44403C;
 
-  --border-gold-subtle: rgba(212, 175, 55, 0.35);
-  --border-gold-strong: rgba(255, 215, 0, 0.6);
+  --border-gold-subtle: rgba(212, 175, 55, 0.3);
+  --border-gold-strong: rgba(212, 175, 55, 0.6);
 
   --font-serif: 'Cinzel', serif;
   --font-sans: 'Outfit', sans-serif;
@@ -46,11 +44,10 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.6;
-  background-color: #FFFDF0;
+  background-color: #FFFDF5;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(255, 215, 0, 0.18) 0%, transparent 45%),
-    radial-gradient(circle at 85% 65%, rgba(212, 175, 55, 0.15) 0%, transparent 45%),
-    radial-gradient(circle at 50% 85%, rgba(254, 240, 138, 0.25) 0%, transparent 40%);
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(254, 240, 138, 0.15) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -66,39 +63,31 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFD700;
+  background: #C5A028;
 }
 
-/* Pure Gold Typography Gradients & Animations */
-@keyframes shimmerText {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
+/* Clean Gold Typography Gradients (No moving text shimmer) */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 35%, #FFD700 70%, #B8860B 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #785E07 0%, #C5A028 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  animation: shimmerText 5s ease infinite;
 }
 
 .text-yellow-gradient {
-  background: linear-gradient(135deg, #1C1917 0%, #B8860B 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #1C1917 0%, #785E07 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Pure Metallic Gold Buttons */
+/* Pure Gold Buttons */
 .btn-gold {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+  background: linear-gradient(135deg, #E6C200 0%, #D4AF37 50%, #C5A028 100%);
   color: #000000;
   font-weight: 800;
   padding: 14px 28px;
-  border-radius: 14px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
   display: inline-flex;
@@ -106,59 +95,52 @@ body {
   gap: 10px;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 25px rgba(212, 175, 55, 0.45);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
 }
 
 .btn-gold:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 35px rgba(255, 215, 0, 0.65);
-  background: linear-gradient(135deg, #FFF5C0 0%, #FFD700 50%, #D4AF37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #FFF5C0 0%, #E6C200 100%);
 }
 
 .btn-outline-gold {
-  background: rgba(255, 255, 255, 0.95);
-  color: #856404;
+  background: #FFFFFF;
+  color: #785E07;
   font-weight: 800;
   padding: 13px 26px;
-  border-radius: 14px;
-  border: 2px solid #D4AF37;
+  border-radius: 12px;
+  border: 1.5px solid #D4AF37;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: all 0.35s ease;
-  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
 }
 
 .btn-outline-gold:hover {
-  background: #FEF9D7;
-  border-color: #FFD700;
+  background: #FEF9E7;
+  border-color: #C5A028;
   color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
 }
 
-/* Metallic Gold Cards & Badges */
+/* Cards & Badges */
 .glass-card-gold {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #FFFFFF;
   border: 1.5px solid var(--border-gold-subtle);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.08);
+  transition: all 0.25s ease;
 }
 
 .glass-card-gold:hover {
   border-color: var(--border-gold-strong);
-  background: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.25), 0 0 25px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.18);
 }
 
 .gold-badge {
@@ -168,44 +150,19 @@ body {
   padding: 6px 16px;
   border-radius: 30px;
   background: #FEF08A;
-  border: 1.5px solid #D4AF37;
-  color: #856404;
+  border: 1px solid #D4AF37;
+  color: #785E07;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
-}
-
-/* Animations */
-@keyframes floatAnim {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(0.5deg); }
-}
-
-@keyframes pulseGoldGlow {
-  0%, 100% { opacity: 0.25; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(1.08); }
-}
-
-.animate-float {
-  animation: floatAnim 4s ease-in-out infinite;
-}
-
-.glow-orb {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, #FFD700 0%, #D4AF37 50%, transparent 70%);
-  animation: pulseGoldGlow 5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(28, 25, 23, 0.8);
-  backdrop-filter: blur(14px);
+  background: rgba(28, 25, 23, 0.75);
+  backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex;
   align-items: center;
