@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+import Hero from '../components/Hero.jsx';
+import Services from '../components/Services.jsx';
+import Showroom from '../components/Showroom.jsx';
+import AnkaufCalculator from '../components/AnkaufCalculator.jsx';
+import WhyUs from '../components/WhyUs.jsx';
+import Testimonials from '../components/Testimonials.jsx';
+import ContactSection from '../components/ContactSection.jsx';
+import Footer from '../components/Footer.jsx';
+---
+
+<Layout title="Schossacher Garage | Erstklassige Werkstatt & Autohandel">
+  <main>
+    <Navbar client:load />
+    <Hero client:load />
+    <Services client:visible />
+    <Showroom client:visible />
+    <AnkaufCalculator client:visible />
+    <WhyUs client:visible />
+    <Testimonials client:visible />
+    <ContactSection client:visible />
+    <Footer client:visible />
+  </main>
+</Layout>
