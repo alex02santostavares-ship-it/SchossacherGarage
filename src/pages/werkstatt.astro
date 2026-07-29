@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+import Services from '../components/Services.jsx';
+import ContactSection from '../components/ContactSection.jsx';
+import Footer from '../components/Footer.jsx';
+import Preloader from '../components/Preloader.jsx';
+import { Wrench, ShieldCheck, CheckCircle2, Clock, Car, PhoneCall } from 'lucide-react';
+---
+
+<Layout title="Werkstatt & MFK Services | Schossacher Garage Schweiz">
+  <Preloader client:load />
+  <Navbar client:load />
+  
+  <main className="pt-28 pb-16">
+    {/* Page Header */}
+    <section className="py-16 relative bg-gradient-to-b from-[#07090e] via-[#0e1420] to-[#07090e] border-b border-white/5">
+      <div className="container text-center max-w-3xl space-y-4">
+        <div className="badge-cyber mx-auto">
+          <Wrench className="w-4 h-4 text-cyan-400" />
+          <span>Schweizer Meisterbetrieb</span>
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight font-serif">
+          Werkstatt & <span className="text-cyan-gradient">MFK Services</span>
+        </h1>
+        <p className="text-slate-300 text-base md:text-lg">
+          Qualitätsgeprüfte Reparaturen, Wartungen nach Herstellervorgaben und 100% MFK-Vorführgarantie für alle Marken.
+        </p>
+      </div>
+    </section>
+
+    <Services client:visible />
+
+    {/* Service Guarantee Highlight Banner */}
+    <section className="py-16 bg-[#07090e] relative">
+      <div className="container">
+        <div className="glass-card-cyber p-8 md:p-12 border-cyan-500/30 text-center space-y-6 max-w-4xl mx-auto">
+          <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mx-auto">
+            <ShieldCheck className="w-8 h-8" />
+          </div>
+          <h2 className="text-3xl font-bold text-white font-serif">Unsere Schweizer Service-Garantie</h2>
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto">
+            Jede Arbeit in der Schossacher Garage beinhaltet 12 Monate Garantie auf Ersatzteile & Arbeit. Wir arbeiten streng nach Werksvorgaben – damit bleibt Ihre Neuwagen-Herstellergarantie vollständig erhalten.
+          </p>
+          <div className="pt-4 flex justify-center gap-4">
+            <a href="/kontakt" className="btn-primary-cyan text-sm">
+              Termin Buchen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactSection client:visible />
+  </main>
+
+  <Footer client:visible />
+</Layout>
