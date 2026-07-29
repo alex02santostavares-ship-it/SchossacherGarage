@@ -83,38 +83,38 @@ export default function Showroom() {
   };
 
   return (
-    <section id="showroom" className="section-padding relative bg-[#0d0e12]">
+    <section id="showroom" className="section-padding relative bg-[#FDFBF7]">
       <div className="container">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="gold-badge mb-3">
-              <Car className="w-4 h-4 text-[#FBBF24]" />
+              <Car className="w-4 h-4 text-[#B45309]" />
               <span>Autohandel & Premium Occasionen</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">
               Aktuelle <span className="text-gold-gradient font-serif">Fahrzeuge</span>
             </h2>
-            <p className="text-slate-300 text-sm md:text-base mt-2 max-w-xl">
+            <p className="text-zinc-600 text-sm md:text-base mt-2 max-w-xl font-medium">
               Alle unsere Fahrzeuge sind von unseren KFZ-Meistern gründlich geprüft, MFK-zertifiziert und werden mit Schweizer Garantie übergeben.
             </p>
           </div>
 
           {/* Search Bar */}
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500" />
             <input
               type="text"
               placeholder="Marke oder Modell suchen..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#FBBF24] transition-all"
+              className="w-full bg-[#FAF4E6] border border-amber-500/20 rounded-xl pl-10 pr-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-[#D97706] transition-all font-medium"
             />
           </div>
         </div>
 
         {/* Filter Categories */}
-        <div className="flex flex-wrap items-center gap-3 mb-10 border-b border-white/10 pb-4">
+        <div className="flex flex-wrap items-center gap-3 mb-10 border-b border-amber-900/10 pb-4">
           {[
             { id: 'all', label: 'Alle Fahrzeuge' },
             { id: 'sportwagen', label: 'Sportwagen' },
@@ -126,8 +126,8 @@ export default function Showroom() {
               onClick={() => setFilterCategory(cat.id)}
               className={`px-5 py-2 rounded-xl text-xs font-bold tracking-wider transition-all duration-200 ${
                 filterCategory === cat.id
-                  ? 'bg-[#FBBF24] text-black shadow-lg shadow-amber-500/25'
-                  : 'bg-white/5 text-slate-300 hover:text-white border border-white/10 hover:border-white/20'
+                  ? 'bg-[#F59E0B] text-white shadow-lg shadow-amber-500/25'
+                  : 'bg-[#FAF4E6] text-zinc-700 hover:text-zinc-900 border border-amber-500/20'
               }`}
             >
               {cat.label}
@@ -138,7 +138,7 @@ export default function Showroom() {
         {/* Vehicle Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVehicles.map((car) => (
-            <div key={car.id} className="glass-card-gold overflow-hidden group hover:border-[#FBBF24] transition-all duration-300 flex flex-col justify-between">
+            <div key={car.id} className="glass-card-gold overflow-hidden group hover:border-[#D97706] transition-all duration-300 flex flex-col justify-between">
               {/* Image & Badge */}
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -146,37 +146,37 @@ export default function Showroom() {
                   alt={car.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e12] via-transparent to-transparent opacity-80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18181B]/80 via-transparent to-transparent opacity-90"></div>
                 <span className="absolute top-4 left-4 gold-badge !text-[11px] !py-1 !px-3">
                   {car.badge}
                 </span>
-                <span className="absolute bottom-4 right-4 text-2xl font-bold font-mono text-white drop-shadow-md">
+                <span className="absolute bottom-4 right-4 text-2xl font-bold font-mono text-[#FDE047] drop-shadow-md">
                   {car.price}
                 </span>
               </div>
 
               {/* Body Content */}
               <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-white font-serif group-hover:text-[#FBBF24] transition-colors">
+                <h3 className="text-xl font-bold text-zinc-900 font-serif group-hover:text-[#B45309] transition-colors">
                   {car.title}
                 </h3>
 
                 {/* Specs Grid */}
-                <div className="grid grid-cols-2 gap-3 text-xs text-slate-200 bg-white/5 p-3 rounded-xl border border-white/5 font-semibold">
+                <div className="grid grid-cols-2 gap-3 text-xs text-zinc-700 bg-[#FAF4E6] p-3 rounded-xl border border-amber-500/20 font-semibold">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-3.5 h-3.5 text-[#FBBF24]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#B45309]" />
                     <span>EZ: {car.year}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Gauge className="w-3.5 h-3.5 text-[#FBBF24]" />
+                    <Gauge className="w-3.5 h-3.5 text-[#B45309]" />
                     <span>{car.km}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Zap className="w-3.5 h-3.5 text-[#FBBF24]" />
+                    <Zap className="w-3.5 h-3.5 text-[#B45309]" />
                     <span>{car.power}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Fuel className="w-3.5 h-3.5 text-[#FBBF24]" />
+                    <Fuel className="w-3.5 h-3.5 text-[#B45309]" />
                     <span>{car.fuel}</span>
                   </div>
                 </div>
@@ -184,8 +184,8 @@ export default function Showroom() {
                 {/* Highlights */}
                 <ul className="space-y-1.5 pt-1">
                   {car.features.slice(0, 3).map((feat, idx) => (
-                    <li key={idx} className="text-xs text-slate-300 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FBBF24]"></span>
+                    <li key={idx} className="text-xs text-zinc-600 flex items-center gap-2 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
                       {feat}
                     </li>
                   ))}
@@ -211,24 +211,24 @@ export default function Showroom() {
       {selectedVehicle && (
         <div className="modal-overlay" onClick={() => setSelectedVehicle(null)}>
           <div 
-            className="glass-card-gold max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative border-[#FBBF24]/60 shadow-2xl"
+            className="glass-card-gold max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative border-[#D97706] shadow-2xl !bg-[#FDFBF7]"
             onClick={(e) => e.stopPropagation()}
           >
             <button 
               onClick={() => setSelectedVehicle(null)}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-full bg-white/5"
+              className="absolute top-4 right-4 p-2 text-zinc-500 hover:text-zinc-900 rounded-full bg-amber-500/10"
             >
               <X className="w-5 h-5" />
             </button>
 
             {bookingSuccess ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 bg-[#FBBF24] text-black rounded-full flex items-center justify-center mx-auto animate-bounce">
+                <div className="w-16 h-16 bg-[#F59E0B] text-white rounded-full flex items-center justify-center mx-auto animate-bounce shadow-lg">
                   <CheckCircle2 className="w-10 h-10 stroke-[3]" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-serif">Vielen Dank für Ihre Anfrage!</h3>
-                <p className="text-slate-200 text-sm max-w-md mx-auto">
-                  Ein Berater der Schossacher Garage wird sich in Kürze telefonisch für die Bestätigung Ihrer Probefahrt des <strong className="text-[#FBBF24]">{selectedVehicle.title}</strong> melden.
+                <h3 className="text-2xl font-bold text-zinc-900 font-serif">Vielen Dank für Ihre Anfrage!</h3>
+                <p className="text-zinc-700 text-sm max-w-md mx-auto font-medium">
+                  Ein Berater der Schossacher Garage wird sich in Kürze telefonisch für die Bestätigung Ihrer Probefahrt des <strong className="text-[#B45309]">{selectedVehicle.title}</strong> melden.
                 </p>
               </div>
             ) : (
@@ -238,27 +238,27 @@ export default function Showroom() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
                     <div>
-                      <span className="text-xs uppercase text-[#FBBF24] font-bold tracking-wider">{selectedVehicle.badge}</span>
+                      <span className="text-xs uppercase text-[#FEF08A] font-bold tracking-wider">{selectedVehicle.badge}</span>
                       <h3 className="text-2xl font-bold text-white font-serif">{selectedVehicle.title}</h3>
                     </div>
-                    <span className="text-2xl font-bold font-mono text-[#FBBF24]">{selectedVehicle.price}</span>
+                    <span className="text-2xl font-bold font-mono text-[#FDE047]">{selectedVehicle.price}</span>
                   </div>
                 </div>
 
                 {/* Specs */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white/5 p-4 rounded-xl mb-6 text-xs text-slate-200 font-semibold">
-                  <div><span className="text-slate-400 block text-[10px]">Erstzulassung</span><strong>{selectedVehicle.year}</strong></div>
-                  <div><span className="text-slate-400 block text-[10px]">Kilometerstand</span><strong>{selectedVehicle.km}</strong></div>
-                  <div><span className="text-slate-400 block text-[10px]">Leistung</span><strong>{selectedVehicle.power}</strong></div>
-                  <div><span className="text-slate-400 block text-[10px]">Getriebe</span><strong>{selectedVehicle.transmission}</strong></div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[#FAF4E6] p-4 rounded-xl mb-6 text-xs text-zinc-800 font-semibold border border-amber-500/20">
+                  <div><span className="text-zinc-500 block text-[10px]">Erstzulassung</span><strong>{selectedVehicle.year}</strong></div>
+                  <div><span className="text-zinc-500 block text-[10px]">Kilometerstand</span><strong>{selectedVehicle.km}</strong></div>
+                  <div><span className="text-zinc-500 block text-[10px]">Leistung</span><strong>{selectedVehicle.power}</strong></div>
+                  <div><span className="text-zinc-500 block text-[10px]">Getriebe</span><strong>{selectedVehicle.transmission}</strong></div>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-xs uppercase tracking-widest text-[#FBBF24] font-bold mb-3">Ausstattungshighlights</h4>
+                  <h4 className="text-xs uppercase tracking-widest text-[#B45309] font-bold mb-3">Ausstattungshighlights</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {selectedVehicle.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-200 font-medium">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FBBF24]" />
+                      <div key={idx} className="flex items-center gap-2 text-xs text-zinc-800 font-semibold">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D97706]" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -266,16 +266,16 @@ export default function Showroom() {
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleInquirySubmit} className="space-y-4 pt-4 border-t border-white/10">
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">Probefahrt oder Kaufanfrage</h4>
+                <form onSubmit={handleInquirySubmit} className="space-y-4 pt-4 border-t border-amber-900/10">
+                  <h4 className="text-sm font-bold text-zinc-900 uppercase tracking-wider">Probefahrt oder Kaufanfrage</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <input type="text" required placeholder="Ihr Vor- & Nachname *" className="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FBBF24]" />
-                    <input type="tel" required placeholder="Telefonnummer *" className="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FBBF24]" />
+                    <input type="text" required placeholder="Ihr Vor- & Nachname *" className="bg-[#FAF4E6] border border-amber-500/20 rounded-xl px-4 py-2.5 text-xs text-zinc-900 focus:outline-none focus:border-[#D97706] font-medium" />
+                    <input type="tel" required placeholder="Telefonnummer *" className="bg-[#FAF4E6] border border-amber-500/20 rounded-xl px-4 py-2.5 text-xs text-zinc-900 focus:outline-none focus:border-[#D97706] font-medium" />
                   </div>
-                  <input type="email" required placeholder="E-Mail Adresse *" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FBBF24]" />
+                  <input type="email" required placeholder="E-Mail Adresse *" className="w-full bg-[#FAF4E6] border border-amber-500/20 rounded-xl px-4 py-2.5 text-xs text-zinc-900 focus:outline-none focus:border-[#D97706] font-medium" />
 
                   <div className="flex items-center justify-between pt-2">
-                    <a href="tel:+41791234567" className="text-xs text-[#FBBF24] font-bold flex items-center gap-1">
+                    <a href="tel:+41791234567" className="text-xs text-[#B45309] font-bold flex items-center gap-1">
                       <PhoneCall className="w-4 h-4" /> Direkt Anrufen
                     </a>
                     <button type="submit" className="btn-gold !py-2.5 !px-6 text-xs">

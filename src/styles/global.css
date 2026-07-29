@@ -1,26 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Strictly 3 Colors: Gold, Bright Yellow, Deep Dark Charcoal */
-  --gold-primary: #F59E0B;
-  --yellow-bright: #FBBF24;
-  --gold-metallic: linear-gradient(135deg, #FFF5C0 0%, #F59E0B 50%, #B45309 100%);
+  /* Luminous Champagne Gold Light Theme */
+  --bg-primary: #FDFBF7;
+  --bg-secondary: #FAF4E6;
+  --bg-card: rgba(255, 253, 248, 0.95);
+  --bg-card-hover: #FFFFFF;
+
+  --gold-primary: #D97706;
+  --gold-secondary: #F59E0B;
+  --yellow-bright: #EAB308;
   --gold-light: #FEF08A;
 
-  --bg-dark: #0d0e12;
-  --bg-card: rgba(22, 24, 30, 0.9);
-  --bg-card-hover: rgba(30, 33, 42, 0.95);
+  --text-main: #18181B;
+  --text-muted: #52525B;
+  --text-dark: #09090B;
 
-  --text-white: #FFFFFF;
-  --text-gold: #FBBF24;
-  --text-muted: #D1D5DB;
+  --border-gold-subtle: rgba(217, 119, 6, 0.25);
+  --border-gold-strong: rgba(217, 119, 6, 0.5);
 
   --font-serif: 'Cinzel', serif;
   --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
 }
 
 * {
@@ -32,18 +37,19 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  background-color: var(--bg-dark);
-  color: var(--text-white);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
   overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.6;
-  background-color: #0d0e12;
+  background-color: #FDFBF7;
   background-image: 
-    radial-gradient(circle at 20% 10%, rgba(245, 158, 11, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 80% 60%, rgba(251, 191, 36, 0.1) 0%, transparent 45%);
+    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(251, 191, 36, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(217, 119, 6, 0.08) 0%, transparent 40%);
   background-attachment: fixed;
 }
 
@@ -52,35 +58,35 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #B45309;
+  background: #D97706;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FBBF24;
+  background: #B45309;
 }
 
 /* Gold Typography Gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFF5C0 0%, #FBBF24 50%, #F59E0B 100%);
+  background: linear-gradient(135deg, #B45309 0%, #D97706 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
 .text-yellow-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDE047 60%, #F59E0B 100%);
+  background: linear-gradient(135deg, #18181B 0%, #D97706 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Gold Buttons */
+/* Buttons */
 .btn-gold {
-  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
-  color: #000000;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
   font-weight: 800;
   padding: 14px 28px;
   border-radius: 12px;
@@ -92,22 +98,22 @@ body {
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 25px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.35);
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(251, 191, 36, 0.6);
-  background: linear-gradient(135deg, #FFF5C0 0%, #FBBF24 100%);
+  box-shadow: 0 8px 30px rgba(217, 119, 6, 0.5);
+  background: linear-gradient(135deg, #FBBF24 0%, #D97706 100%);
 }
 
 .btn-outline-gold {
-  background: rgba(22, 24, 30, 0.8);
-  color: #FDE047;
+  background: rgba(255, 255, 255, 0.9);
+  color: #B45309;
   font-weight: 700;
   padding: 13px 26px;
   border-radius: 12px;
-  border: 1px solid #F59E0B;
+  border: 1.5px solid #D97706;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -119,27 +125,28 @@ body {
 }
 
 .btn-outline-gold:hover {
-  background: rgba(245, 158, 11, 0.15);
-  border-color: #FBBF24;
-  color: #FFFFFF;
+  background: #FFFBEB;
+  border-color: #B45309;
+  color: #78350F;
   transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
 }
 
-/* Gold Cards & Badges */
+/* Champagne Gold Cards & Badges */
 .glass-card-gold {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: 18px;
+  border: 1.5px solid var(--border-gold-subtle);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(180, 83, 9, 0.06);
   transition: all 0.3s ease;
 }
 
 .glass-card-gold:hover {
-  border-color: rgba(251, 191, 36, 0.6);
+  border-color: var(--border-gold-strong);
   background: var(--bg-card-hover);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 20px 45px rgba(217, 119, 6, 0.15);
 }
 
 .gold-badge {
@@ -148,9 +155,9 @@ body {
   gap: 8px;
   padding: 6px 16px;
   border-radius: 30px;
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(251, 191, 36, 0.4);
-  color: #FDE047;
+  background: #FEF3C7;
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  color: #92400E;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 1.2px;
@@ -160,7 +167,7 @@ body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(24, 24, 27, 0.75);
   backdrop-filter: blur(12px);
   z-index: 1000;
   display: flex;
