@@ -10,7 +10,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="section-padding relative bg-[#07080A]">
+    <section id="contact" className="section-padding relative bg-transparent">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Info Side */}
@@ -29,7 +29,7 @@ export default function ContactSection() {
             </div>
 
             {/* Google Reviews Badge */}
-            <div className="bg-[#0E121D] p-4 rounded-xl border border-[#D4AF37]/30 flex items-center justify-between shadow-md">
+            <div className="glass-card-gold p-4 rounded-xl border border-[#D4AF37]/30 flex items-center justify-between shadow-md">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700]">
                   <Star className="w-5 h-5 fill-[#FFD700]" />
@@ -41,8 +41,8 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0E121D] border border-[#D4AF37]/30">
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 rounded-xl glass-card-gold border border-[#D4AF37]/30">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700] flex-shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -53,7 +53,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0E121D] border border-[#D4AF37]/30">
+              <div className="flex items-start gap-4 p-4 rounded-xl glass-card-gold border border-[#D4AF37]/30">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700] flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -66,7 +66,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0E121D] border border-[#D4AF37]/30">
+              <div className="flex items-start gap-4 p-4 rounded-xl glass-card-gold border border-[#D4AF37]/30">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700] flex-shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
@@ -84,7 +84,7 @@ export default function ContactSection() {
 
           {/* Form Side */}
           <div className="lg:col-span-7">
-            <div className="glass-card-gold p-8 md:p-10 border-[#D4AF37]/40 relative !bg-[#0E121D]">
+            <div className="glass-card-gold p-8 md:p-10 border-[#D4AF37]/35 relative">
               {submitted ? (
                 <div className="text-center py-12 space-y-4">
                   <div className="w-16 h-16 bg-[#FFD700] text-black rounded-full flex items-center justify-center mx-auto shadow-lg">
@@ -107,24 +107,24 @@ export default function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-stone-300 mb-1.5">Name *</label>
-                      <input type="text" required placeholder="Ihr Vor- und Nachname" className="w-full bg-[#07080A] border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
+                      <input type="text" required placeholder="Ihr Vor- und Nachname" className="w-full bg-[#060709]/80 border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
                     </div>
 
                     <div>
                       <label className="block text-xs font-bold text-stone-300 mb-1.5">Telefonnummer *</label>
-                      <input type="tel" required placeholder="044 000 00 00" className="w-full bg-[#07080A] border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
+                      <input type="tel" required placeholder="044 000 00 00" className="w-full bg-[#060709]/80 border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-stone-300 mb-1.5">E-Mail *</label>
-                      <input type="email" required placeholder="name@beispiel.ch" className="w-full bg-[#07080A] border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
+                      <input type="email" required placeholder="name@beispiel.ch" className="w-full bg-[#060709]/80 border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold" />
                     </div>
 
                     <div>
                       <label className="block text-xs font-bold text-stone-300 mb-1.5">Gewünschte Dienstleistung *</label>
-                      <select className="w-full bg-[#07080A] border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold">
+                      <select className="w-full bg-[#060709]/80 border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold">
                         <option value="mfk">MFK-Vorbereitung & Prüfung</option>
                         <option value="service">Inspektion & Ölwechsel</option>
                         <option value="reparatur">KFZ-Reparatur / Diagnose</option>
@@ -137,7 +137,7 @@ export default function ContactSection() {
 
                   <div>
                     <label className="block text-xs font-bold text-stone-300 mb-1.5">Wunschtermin & Bemerkung</label>
-                    <textarea rows="4" placeholder="Fahrzeugmodell, Kontrollschild oder Wunschdatum angeben..." className="w-full bg-[#07080A] border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold"></textarea>
+                    <textarea rows="4" placeholder="Fahrzeugmodell, Kontrollschild oder Wunschdatum angeben..." className="w-full bg-[#060709]/80 border border-[#D4AF37]/30 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#FFD700] font-semibold"></textarea>
                   </div>
 
                   <button type="submit" className="w-full btn-gold justify-center text-sm py-4">

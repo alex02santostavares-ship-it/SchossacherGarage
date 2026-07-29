@@ -26,7 +26,7 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="section-padding relative bg-[#07080A]">
+    <section id="why-us" className="section-padding relative bg-transparent">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="gold-badge mx-auto">
@@ -45,7 +45,7 @@ export default function WhyUs() {
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#FFD700] transition-all duration-300 !bg-[#0E121D]">
+              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#FFD700] transition-all duration-300">
                 <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700] mx-auto shadow-sm">
                   <Icon className="w-7 h-7" />
                 </div>

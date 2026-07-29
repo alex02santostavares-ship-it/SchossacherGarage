@@ -3,13 +3,13 @@ import { Wrench, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050608] border-t border-[#D4AF37]/20 pt-16 pb-8 text-stone-400 text-xs">
+    <footer className="bg-[#040507] border-t border-[#D4AF37]/20 pt-16 pb-8 text-stone-400 text-xs relative z-10">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#D4AF37]/20">
           {/* Col 1: Brand */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#C5A028] flex items-center justify-center text-black font-bold">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#C5A028] flex items-center justify-center text-black font-bold shadow-md">
                 <Wrench className="w-5 h-5 stroke-[2.5]" />
               </div>
               <div>
@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="text-stone-400 text-xs leading-relaxed max-w-sm font-semibold">
               Ihre professionelle Autowerkstatt & vertrauensvoller Autohändler im Schossacher 22, 8600 Dübendorf.
             </p>
-            <div className="flex items-center gap-2 text-[11px] text-[#FFD700] bg-amber-500/10 border border-[#D4AF37]/40 px-3 py-1.5 rounded-lg w-fit font-bold shadow-sm">
+            <div className="flex items-center gap-2 text-[11px] text-[#FFD700] bg-amber-500/10 border border-[#D4AF37]/35 px-3 py-1.5 rounded-lg w-fit font-bold shadow-sm">
               <Globe className="w-3.5 h-3.5" />
               <span>Cloudflare Pages Deployed</span>
             </div>

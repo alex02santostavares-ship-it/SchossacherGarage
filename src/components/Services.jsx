@@ -64,7 +64,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="section-padding relative bg-[#07080A]">
+    <section id="services" className="section-padding relative bg-transparent">
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -95,12 +95,12 @@ export default function Services() {
                   className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${
                     isActive
                       ? 'bg-gradient-to-r from-[#FFD700] via-[#E6C200] to-[#C5A028] text-black border-[#FFD700] shadow-xl'
-                      : 'bg-[#0E121D] text-stone-200 border-[#D4AF37]/25 hover:border-[#FFD700]'
+                      : 'glass-card-gold text-stone-200 border-[#D4AF37]/25 hover:border-[#FFD700]'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
-                      isActive ? 'bg-black text-[#FFD700]' : 'bg-[#07080A] text-[#FFD700] border border-[#D4AF37]/30'
+                      isActive ? 'bg-black text-[#FFD700]' : 'bg-[#060709] text-[#FFD700] border border-[#D4AF37]/30'
                     }`}>
                       <Icon className="w-5 h-5" />
                     </div>
@@ -121,7 +121,7 @@ export default function Services() {
 
           {/* Right Active Service Content */}
           <div className="lg:col-span-8">
-            <div className="glass-card-gold p-8 md:p-10 border-[#FFD700]/40 space-y-6 relative overflow-hidden !bg-[#0E121D]">
+            <div className="glass-card-gold p-8 md:p-10 border-[#FFD700]/40 space-y-6 relative overflow-hidden">
               <div className="space-y-2">
                 <span className="gold-badge">{serviceCategories[activeTab].badge}</span>
                 <h3 className="text-2xl md:text-3xl font-bold text-white font-serif">
@@ -137,7 +137,7 @@ export default function Services() {
                 <h4 className="text-xs uppercase tracking-widest text-[#FFD700] font-bold">Leistungsumfang im Detail</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {serviceCategories[activeTab].items.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-[#07080A] border border-[#D4AF37]/25">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-[#060709]/70 border border-[#D4AF37]/25">
                       <CheckCircle2 className="w-4 h-4 text-[#FFD700] mt-0.5 flex-shrink-0" />
                       <span className="text-xs text-stone-200 font-semibold">{item}</span>
                     </div>

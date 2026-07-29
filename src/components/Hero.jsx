@@ -3,16 +3,16 @@ import { ArrowRight, Wrench, Car, Clock, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[88vh] flex items-center pt-32 pb-20 overflow-hidden bg-[#07080A]">
-      {/* Background Image with Deep Obsidian Overlay */}
+    <section id="hero" className="relative min-h-[88vh] flex items-center pt-32 pb-20 overflow-hidden bg-transparent">
+      {/* Background Image with Smooth Gradient Blend */}
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hero.jpg"
           alt="Schossacher Garage Werkstatt Dübendorf"
-          className="w-full h-full object-cover object-center filter brightness-[0.4] contrast-110"
+          className="w-full h-full object-cover object-center filter brightness-[0.35] contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07080A] via-[#07080A]/85 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07080A] via-[#07080A]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060709] via-[#060709]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060709] via-[#060709]/75 to-transparent"></div>
       </div>
 
       <div className="container relative z-10">
@@ -49,7 +49,7 @@ export default function Hero() {
             </div>
 
             {/* Highlights Grid */}
-            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-[#D4AF37]/25 mt-8">
+            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-[#D4AF37]/20 mt-8">
               <div>
                 <span className="block text-2xl sm:text-3xl font-extrabold text-[#FFD700] font-serif">4.3 / 5.0</span>
                 <span className="text-xs text-stone-400 font-bold">★ 35 Google-Rezensionen</span>
@@ -69,8 +69,8 @@ export default function Hero() {
 
           {/* Right Showcase Card */}
           <div className="lg:col-span-5 relative hidden lg:block">
-            <div className="glass-card-gold p-6 border-[#D4AF37]/40 shadow-2xl relative space-y-6 !bg-[#0E121D]">
-              <div className="relative h-64 rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-inner bg-[#07080A]">
+            <div className="glass-card-gold p-6 border-[#D4AF37]/35 shadow-2xl relative space-y-6">
+              <div className="relative h-64 rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-inner bg-[#060709]">
                 <img src="/images/1.webp" alt="Porsche 911 GT3 RS Schossacher Garage" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
                 <span className="absolute top-3 left-3 gold-badge !text-[10px] !py-1 !px-3 shadow-md">
@@ -86,7 +86,7 @@ export default function Hero() {
               </div>
 
               {/* Quick Contact Badge */}
-              <div className="bg-[#07080A] p-4 rounded-xl border border-[#D4AF37]/30 flex items-center justify-between shadow-sm">
+              <div className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-[#D4AF37]/25 flex items-center justify-between shadow-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700]">
                     <Clock className="w-5 h-5" />

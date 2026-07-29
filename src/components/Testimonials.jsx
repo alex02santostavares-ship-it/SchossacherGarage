@@ -24,7 +24,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="section-padding relative bg-[#0B0D14]">
+    <section className="section-padding relative bg-transparent">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="gold-badge mx-auto">
@@ -38,8 +38,8 @@ export default function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev, idx) => (
-            <div key={idx} className="glass-card-gold p-8 relative flex flex-col justify-between hover:border-[#FFD700] !bg-[#0E121D]">
-              <Quote className="w-10 h-10 text-amber-500/20 absolute top-6 right-6" />
+            <div key={idx} className="glass-card-gold p-8 relative flex flex-col justify-between hover:border-[#FFD700]">
+              <Quote className="w-10 h-10 text-amber-500/15 absolute top-6 right-6" />
               
               <div className="space-y-4 relative z-10">
                 <div className="flex text-[#FFD700] gap-1">
