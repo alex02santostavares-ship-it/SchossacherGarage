@@ -66,7 +66,38 @@ body {
   background: #C5A028;
 }
 
-/* Clean Gold Typography Gradients (No moving text shimmer) */
+/* Creative View Transitions Styling */
+::view-transition-old(root) {
+  animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both vt-fade-out,
+             250ms cubic-bezier(0.4, 0, 0.2, 1) both vt-scale-down;
+}
+
+::view-transition-new(root) {
+  animation: 350ms cubic-bezier(0, 0, 0.2, 1) both vt-fade-in,
+             350ms cubic-bezier(0, 0, 0.2, 1) both vt-scale-up;
+}
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes vt-scale-down {
+  from { transform: scale(1); filter: blur(0px); }
+  to { transform: scale(0.98); filter: blur(3px); }
+}
+
+@keyframes vt-scale-up {
+  from { transform: scale(1.02); filter: blur(3px); }
+  to { transform: scale(1); filter: blur(0px); }
+}
+
+/* Clean Gold Typography Gradients */
 .text-gold-gradient {
   background: linear-gradient(135deg, #785E07 0%, #C5A028 50%, #D4AF37 100%);
   -webkit-background-clip: text;

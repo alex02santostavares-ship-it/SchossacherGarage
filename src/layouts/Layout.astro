@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -35,8 +36,11 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Astro View Transitions Router -->
+    <ClientRouter fallback="animate" />
   </head>
-  <body class="bg-[#07080a] text-slate-100 antialiased selection:bg-[#D4AF37] selection:text-black">
+  <body class="bg-[#FFFDF5] text-stone-900 antialiased selection:bg-[#D4AF37] selection:text-black">
     <slot />
   </body>
 </html>
