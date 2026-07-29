@@ -5,21 +5,21 @@
 @tailwind utilities;
 
 :root {
-  /* Pure Gold & Champagne Luxury Palette */
-  --bg-primary: #FFFDF5;
-  --bg-secondary: #FEF9E7;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #FFFFFF;
+  /* Ultra-Luxury Obsidian Black & Metallic Gold Palette */
+  --bg-primary: #07080A;
+  --bg-secondary: #0D0F17;
+  --bg-card: #131722;
+  --bg-card-hover: #1A2030;
 
-  --gold-pure: #D4AF37;
-  --gold-metallic: #C5A028;
-  --gold-dark: #785E07;
-  --gold-light: #FEF08A;
+  --gold-pure: #FFD700;
+  --gold-metallic: #E6C200;
+  --gold-dark: #D4AF37;
+  --gold-glow: rgba(212, 175, 55, 0.25);
 
-  --text-main: #18181B;
-  --text-muted: #44403C;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
 
-  --border-gold-subtle: rgba(212, 175, 55, 0.3);
+  --border-gold-subtle: rgba(212, 175, 55, 0.25);
   --border-gold-strong: rgba(212, 175, 55, 0.6);
 
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -46,11 +46,12 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-family: var(--font-sans);
-  background-color: #FFFDF5;
+  background-color: #07080A;
   background-image: 
-    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(254, 240, 138, 0.15) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(197, 160, 40, 0.06) 0%, transparent 50%);
   background-attachment: fixed;
+  color: #F8FAFC;
 }
 
 /* Custom Scrollbar */
@@ -58,14 +59,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: #07080A;
 }
 ::-webkit-scrollbar-thumb {
   background: #D4AF37;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A028;
+  background: #FFD700;
 }
 
 /* Creative View Transitions Styling */
@@ -101,7 +102,7 @@ body {
 
 /* Clean Gold Typography Gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #785E07 0%, #C5A028 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FFE873 0%, #FFD700 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -109,7 +110,7 @@ body {
 }
 
 .text-yellow-gradient {
-  background: linear-gradient(135deg, #18181B 0%, #785E07 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFE873 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -118,7 +119,7 @@ body {
 
 /* Pure Gold Buttons */
 .btn-gold {
-  background: linear-gradient(135deg, #E6C200 0%, #D4AF37 50%, #C5A028 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #E6C200 50%, #C5A028 100%);
   color: #000000;
   font-family: var(--font-sans);
   font-weight: 800;
@@ -132,19 +133,19 @@ body {
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
   letter-spacing: 0.02em;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
-  background: linear-gradient(135deg, #FFF5C0 0%, #E6C200 100%);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+  background: linear-gradient(135deg, #FFF5C0 0%, #FFD700 100%);
 }
 
 .btn-outline-gold {
-  background: #FFFFFF;
-  color: #785E07;
+  background: rgba(19, 23, 34, 0.8);
+  color: #FFD700;
   font-family: var(--font-sans);
   font-weight: 800;
   padding: 13px 26px;
@@ -161,25 +162,25 @@ body {
 }
 
 .btn-outline-gold:hover {
-  background: #FEF9E7;
-  border-color: #C5A028;
-  color: #000000;
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #FFD700;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Cards & Badges */
 .glass-card-gold {
-  background: #FFFFFF;
+  background: #0E121D;
   border: 1.5px solid var(--border-gold-subtle);
   border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.25s ease;
 }
 
 .glass-card-gold:hover {
   border-color: var(--border-gold-strong);
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.18);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
 }
 
 .gold-badge {
@@ -188,9 +189,9 @@ body {
   gap: 8px;
   padding: 6px 16px;
   border-radius: 30px;
-  background: #FEF08A;
+  background: rgba(212, 175, 55, 0.15);
   border: 1px solid #D4AF37;
-  color: #785E07;
+  color: #FFE873;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 1.2px;
@@ -201,8 +202,8 @@ body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(28, 25, 23, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
   z-index: 1000;
   display: flex;
   align-items: center;

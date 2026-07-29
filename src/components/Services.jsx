@@ -1,242 +1,166 @@
 import React, { useState } from 'react';
-import { 
-  Wrench, ShieldCheck, Cpu, Disc, Disc3, Wind, Sparkles, 
-  Car, ArrowRight, Check, X, Calendar 
-} from 'lucide-react';
+import { Wrench, Shield, Zap, Car, Award, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState(null);
+  const [activeTab, setActiveTab] = useState(0);
 
-  const serviceList = [
+  const serviceCategories = [
     {
       id: 'mfk',
-      title: 'MFK-Vorbereitung & Vorführung',
-      icon: ShieldCheck,
-      badge: 'Schweizer Garantie',
-      shortDesc: 'Vollständiger MFK-Check inklusive Mängelbeseitigung und Vorführung beim Strassenverkehrsamt.',
-      details: [
-        'Gründlicher Vor-MFK System-Check',
-        'Bremsen-, Licht- und Abgastest',
-        'Unterboden- & Motorwäsche',
-        'Direkte Vorführung auf Wunsch durch unser Team'
-      ],
-      price: 'Ab CHF 190.-'
+      title: 'MFK-Vorführung & Check',
+      icon: Shield,
+      badge: 'Garantierte MFK-Bestätigung',
+      desc: '100% Vorführgarantie für Ihr Fahrzeug bei den Schweizer Straßenverkehrsämtern.',
+      items: [
+        'Vollständige Fahrzeugdiagnose auf unserem Prüfstand',
+        'Brems- & Abgastest nach offiziellen CH-Normen',
+        'Unterboden-, Lenkungs- & Aufhängungsprüfung',
+        'Licht- & Scheinwerferjustierung',
+        'Persönliche Vorführung beim Strassenverkehrsamt durch unseren Meister'
+      ]
     },
     {
       id: 'reparatur',
-      title: 'KFZ-Reparaturen & Wartung',
+      title: 'KFZ-Reparatur & Diagnostik',
       icon: Wrench,
-      badge: 'Herstellerkonform',
-      shortDesc: 'Service nach Herstellervorgaben mit Erhalt der vollen Werkgarantie für alle Marken.',
-      details: [
-        'Zahnriemen- & Steuerkettenwechsel',
-        'Ölwechsel inkl. Qualitätsöl & Filter',
-        'Getriebespülung & Kupplungsservice',
-        'Originalersatzteile in Erstausrüsterqualität'
-      ],
-      price: 'Nach Aufwand / Festpreis'
+      badge: 'Markenübergreifendes Handwerk',
+      desc: 'Modernste Fehlerspeicher-Diagnose und fachgerechte Reparaturen mit Originalteilen.',
+      items: [
+        'High-End Computerdiagnostik aller Steuergeräte',
+        'Motor- & Getriebeinstandsetzung',
+        'Erneuerung von Bremsscheiben & Belägen',
+        'Elektronische Fehlersuche & Sensorik',
+        'Klimaanlagen-Wartung & Desinfektion'
+      ]
     },
     {
-      id: 'diagnose',
-      title: 'Elektronik & High-Tech Diagnostik',
-      icon: Cpu,
-      badge: 'Moderne OBD-III',
-      shortDesc: 'Präzise Fehlersuche mittels modernster Diagnosecomputer für alle Fahrzeugelektroniken.',
-      details: [
-        'Auslesen des Fehlerspeichers aller Steuergeräte',
-        'Batterie- & Lichtmaschinen-Prüfung',
-        'Sensoren- & Steuergerätekalibrierung',
-        'Assistenzsystem-Einmessung'
-      ],
-      price: 'Ab CHF 80.-'
-    },
-    {
-      id: 'bremsen',
-      title: 'Bremsen- & Fahrwerksservice',
-      icon: Disc3,
-      badge: 'Maximale Sicherheit',
-      shortDesc: 'Fachgerechter Austausch von Bremsscheiben, Belägen, Stoßdämpfern & Spureinstellung.',
-      details: [
-        'Sicherheits-Check der Bremsanlage',
-        'Qualitäts-Bremsscheiben & Sportbeläge',
-        'Stoßdämpfer- & Federnwechsel',
-        'Elektronische 3D-Spurvermessung'
-      ],
-      price: 'Ab CHF 220.-'
+      id: 'wartung',
+      title: 'Inspektion nach Herstellervorgabe',
+      icon: Zap,
+      badge: 'Voller Erhalt der Garantie',
+      desc: 'Regelmäßige Wartungen nach Herstellervorgaben mit Schweizer Sorgfalt.',
+      items: [
+        'Ölwechsel mit zertifizierten Synthetikölen',
+        'Filterwechsel (Luft, Innenraum, Kraftstoff)',
+        'Zündkerzen- & Zahnriemenwechsel',
+        'Batterie-Check & Spannungsmessung',
+        'Eintrag ins digitale Serviceheft des Herstellers'
+      ]
     },
     {
       id: 'reifen',
-      title: 'Reifen- & Räderservice',
-      icon: Disc,
-      badge: 'Inkl. Einlagerung',
-      shortDesc: 'Reifenwechsel, Auswuchten, Neureifenkauf sowie bequemes Hotel für Ihre Saisonräder.',
-      details: [
-        'Räder- & Reifensechsel (Sommer/Winter)',
-        'Präzisions-Auswuchten & RDKS-Anlernung',
-        'Reifeneinlagerung im klimatisierten Räderhotel',
-        'Verkauf aller Premium-Reifenmarken'
-      ],
-      price: 'Wechsel ab CHF 60.-'
-    },
-    {
-      id: 'klima',
-      title: 'Klimaservice & Abgaswartung',
-      icon: Wind,
-      badge: 'Frische & Gesundheit',
-      shortDesc: 'Kältemittel-Auffüllung (R134a & R1234yf), Ozon-Desinfektion und Abgasprüfung.',
-      details: [
-        'Kältemittel-Absaugung & Befüllung',
-        'Dichtigkeitsprüfung (Formiergas)',
-        'Innenraumfilter-Wechsel & Ozonbehandlung',
-        'Abgaswartung nach Schweizer Gesetz'
-      ],
-      price: 'Ab CHF 110.-'
-    },
-    {
-      id: 'detailing',
-      title: 'Car Detailing & Aufbereitung',
-      icon: Sparkles,
-      badge: 'High-End Finish',
-      shortDesc: 'Professionelle Innen- & Aussenreinigung, Keramikversiegelung und Lackkorrektur.',
-      details: [
-        'Mehrstufige Lackpolitur & Kratzerentfernung',
-        'Langanhaltende Keramik-Versiegelung',
-        'Lederpflege & Deep Clean Innenraum',
-        'Verkaufsvorbereitung für Ihren Gebrauchten'
-      ],
-      price: 'Ab CHF 250.-'
-    },
-    {
-      id: 'ersatzwagen',
-      title: 'Ersatzwagen & Hol-Bring-Service',
+      title: 'Reifenservice & Einlagerung',
       icon: Car,
-      badge: 'Immer Mobil',
-      shortDesc: 'Kostenlose Mobilität während des Werkstattaufenthalts oder bequemer Abholservice.',
-      details: [
-        'Moderne Ersatzfahrzeuge stehen bereit',
-        'Kostenfreie Nutzung bei Service ab CHF 500.-',
-        'Hol- & Bring-Service im Umkreis von 25km',
-        'Flexibles Bringen & Abholen rund um die Uhr'
-      ],
-      price: 'Ab CHF 35.- / Tag'
+      badge: 'Grip & Sicherheit',
+      desc: 'Kompletter Reifenservice mit Auswuchten und professioneller Radeinlagerung.',
+      items: [
+        'Reifenwechsel (Sommer / Winter)',
+        'Präzises computergestütztes Auswuchten',
+        'Spur- & Sturzeinstellung (Achsmessung)',
+        'Professionelle Radeinlagerung im Reifenhotel',
+        'Neureifenverkauf aller Premiummarken'
+      ]
     }
   ];
 
   return (
-    <section id="services" className="section-padding relative bg-[#FFFDF0]">
+    <section id="services" className="section-padding relative bg-[#07080A]">
       <div className="container">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="gold-badge mx-auto">
-            <Wrench className="w-4 h-4 text-[#856404]" />
-            <span>Meisterhafte Werkstattarbeiten</span>
+            <Award className="w-4 h-4 text-[#FFD700]" />
+            <span>Schweizer Meisterbetrieb</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-stone-900 tracking-tight">
-            Unsere <span className="text-gold-gradient font-serif">Werkstatt-Dienstleistungen</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+            Unsere <span className="text-gold-gradient font-serif">Werkstatt-Services</span>
           </h2>
-          <p className="text-stone-600 text-base md:text-lg font-semibold">
-            Von der routinemässigen Inspektion über komplexe Reparaturen bis hin zur MFK-Vorführung – bei Schossacher Garage ist Ihr Fahrzeug in besten Händen.
+          <p className="text-stone-300 text-sm md:text-base font-semibold">
+            Von der MFK-Vorbereitung bis zur komplexen Diagnostik – Schweizer Qualität und faire Schweizer Preise im Schossacher 22 in Dübendorf.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {serviceList.map((srv) => {
-            const Icon = srv.icon;
-            return (
-              <div 
-                key={srv.id}
-                onClick={() => setSelectedService(srv)}
-                className="glass-card-gold p-6 flex flex-col justify-between cursor-pointer group hover:border-[#FFD700] transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#FEF08A] border border-[#D4AF37] flex items-center justify-center text-[#856404] group-hover:scale-110 group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300">
-                      <Icon className="w-6 h-6" />
+        {/* Desktop Tabs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Navigation Buttons */}
+          <div className="lg:col-span-4 space-y-3">
+            {serviceCategories.map((service, idx) => {
+              const Icon = service.icon;
+              const isActive = activeTab === idx;
+              return (
+                <button
+                  key={service.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${
+                    isActive
+                      ? 'bg-gradient-to-r from-[#FFD700] via-[#E6C200] to-[#C5A028] text-black border-[#FFD700] shadow-xl'
+                      : 'bg-[#0E121D] text-stone-200 border-[#D4AF37]/25 hover:border-[#FFD700]'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
+                      isActive ? 'bg-black text-[#FFD700]' : 'bg-[#07080A] text-[#FFD700] border border-[#D4AF37]/30'
+                    }`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] uppercase tracking-wider font-extrabold text-[#856404] bg-[#FEF9D7] px-3 py-1 rounded-full border border-[#D4AF37]/40">
-                      {srv.badge}
-                    </span>
+                    <div>
+                      <h4 className={`text-base font-bold font-serif ${isActive ? 'text-black' : 'text-white'}`}>
+                        {service.title}
+                      </h4>
+                      <span className={`text-[11px] font-bold block ${isActive ? 'text-black/80' : 'text-[#FFD700]'}`}>
+                        {service.badge}
+                      </span>
+                    </div>
                   </div>
+                  <ChevronRight className={`w-5 h-5 transition-transform ${isActive ? 'translate-x-1 text-black' : 'text-stone-400 group-hover:text-white'}`} />
+                </button>
+              );
+            })}
+          </div>
 
-                  <h3 className="text-xl font-bold text-stone-900 mb-2 group-hover:text-[#856404] transition-colors">
-                    {srv.title}
-                  </h3>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-6 font-medium">
-                    {srv.shortDesc}
-                  </p>
+          {/* Right Active Service Content */}
+          <div className="lg:col-span-8">
+            <div className="glass-card-gold p-8 md:p-10 border-[#FFD700]/40 space-y-6 relative overflow-hidden !bg-[#0E121D]">
+              <div className="space-y-2">
+                <span className="gold-badge">{serviceCategories[activeTab].badge}</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-serif">
+                  {serviceCategories[activeTab].title}
+                </h3>
+                <p className="text-stone-300 text-sm leading-relaxed font-semibold">
+                  {serviceCategories[activeTab].desc}
+                </p>
+              </div>
+
+              {/* Items checklist */}
+              <div className="space-y-3 pt-2">
+                <h4 className="text-xs uppercase tracking-widest text-[#FFD700] font-bold">Leistungsumfang im Detail</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {serviceCategories[activeTab].items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-[#07080A] border border-[#D4AF37]/25">
+                      <CheckCircle2 className="w-4 h-4 text-[#FFD700] mt-0.5 flex-shrink-0" />
+                      <span className="text-xs text-stone-200 font-semibold">{item}</span>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                <div className="pt-4 border-t border-[#D4AF37]/20 flex items-center justify-between">
-                  <span className="text-xs font-mono font-extrabold text-[#856404]">{srv.price}</span>
-                  <span className="text-xs font-bold text-[#B8860B] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Details <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
+              {/* Action Banner */}
+              <div className="pt-6 border-t border-[#D4AF37]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <span className="text-xs text-stone-400 block font-semibold">Jetzt Service im Schossacher 22 Buchen</span>
+                  <span className="text-sm font-bold text-white">Garantiert ohne lange Wartezeiten</span>
                 </div>
+                <a href="/kontakt" className="btn-gold text-xs !py-3 !px-6 text-decoration-none">
+                  Termin Vereinbaren
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Service Detail Modal */}
-      {selectedService && (
-        <div className="modal-overlay" onClick={() => setSelectedService(null)}>
-          <div 
-            className="glass-card-gold max-w-xl w-full p-8 relative border-[#FFD700] shadow-2xl !bg-[#FFFDF0]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button 
-              onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 p-2 text-stone-500 hover:text-stone-900 rounded-full bg-[#FEF08A]"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#B8860B] text-black flex items-center justify-center font-bold">
-                {React.createElement(selectedService.icon, { className: 'w-8 h-8 stroke-[2.5]' })}
-              </div>
-              <div>
-                <span className="text-xs uppercase text-[#856404] font-bold tracking-wider">{selectedService.badge}</span>
-                <h3 className="text-2xl font-bold text-stone-900 font-serif">{selectedService.title}</h3>
-              </div>
-            </div>
-
-            <p className="text-stone-700 text-sm mb-6 leading-relaxed font-semibold">
-              {selectedService.shortDesc}
-            </p>
-
-            <div className="bg-[#FEF9D7] rounded-xl p-5 mb-6 border border-[#D4AF37]/30">
-              <h4 className="text-xs uppercase tracking-widest text-[#856404] font-bold mb-3">Leistungsumfang</h4>
-              <ul className="space-y-2.5">
-                {selectedService.details.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm text-stone-800 font-bold">
-                    <Check className="w-4 h-4 text-[#856404] flex-shrink-0 stroke-[3]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex items-center justify-between pt-2">
-              <div>
-                <span className="text-xs text-stone-500 block font-semibold">Richtpreis</span>
-                <span className="text-lg font-bold text-[#856404] font-mono">{selectedService.price}</span>
-              </div>
-
-              <a 
-                href="/kontakt" 
-                onClick={() => setSelectedService(null)}
-                className="btn-gold text-decoration-none text-sm"
-              >
-                <Calendar className="w-4 h-4" />
-                Jetzt Termin Anfragen
-              </a>
             </div>
           </div>
+
         </div>
-      )}
+      </div>
     </section>
   );
 }

@@ -26,17 +26,17 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="section-padding relative bg-[#FFFDF5]">
+    <section id="why-us" className="section-padding relative bg-[#07080A]">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="gold-badge mx-auto">
-            <Award className="w-4 h-4 text-[#785E07]" />
+            <Award className="w-4 h-4 text-[#FFD700]" />
             <span>Warum Schossacher Garage</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-stone-900 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
             Verlässlichkeit & <span className="text-gold-gradient font-serif">Erfahrung</span>
           </h2>
-          <p className="text-stone-600 text-sm md:text-base font-semibold">
+          <p className="text-stone-300 text-sm md:text-base font-semibold">
             Wir stehen in Dübendorf (Kanton Zürich) für ehrliches Handwerk, Kundennähe und höchste Zufriedenheit.
           </p>
         </div>
@@ -45,12 +45,12 @@ export default function WhyUs() {
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#C5A028] transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-[#FEF08A] border border-[#D4AF37] flex items-center justify-center text-[#785E07] mx-auto shadow-sm">
+              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#FFD700] transition-all duration-300 !bg-[#0E121D]">
+                <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-[#D4AF37] flex items-center justify-center text-[#FFD700] mx-auto shadow-sm">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-900 font-serif">{item.title}</h3>
-                <p className="text-stone-600 text-xs leading-relaxed font-semibold">{item.desc}</p>
+                <h3 className="text-xl font-bold text-white font-serif">{item.title}</h3>
+                <p className="text-stone-400 text-xs leading-relaxed font-semibold">{item.desc}</p>
               </div>
             );
           })}
