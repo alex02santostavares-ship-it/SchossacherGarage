@@ -26,17 +26,17 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="section-padding relative bg-[#FDFBF7]">
+    <section id="why-us" className="section-padding relative bg-[#FFFDF0]">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="gold-badge mx-auto">
-            <Award className="w-4 h-4 text-[#B45309]" />
+            <Award className="w-4 h-4 text-[#856404]" />
             <span>Warum Schossacher Garage</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-stone-900 tracking-tight">
             Verlässlichkeit & <span className="text-gold-gradient font-serif">Erfahrung</span>
           </h2>
-          <p className="text-zinc-600 text-sm md:text-base font-medium">
+          <p className="text-stone-600 text-sm md:text-base font-semibold">
             Wir stehen seit über 15 Jahren für ehrliches Handwerk, Kundennähe und höchste Zufriedenheit im Aargau und der ganzen Schweiz.
           </p>
         </div>
@@ -45,12 +45,12 @@ export default function WhyUs() {
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#D97706] transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-amber-500/15 border border-[#D97706] flex items-center justify-center text-[#B45309] mx-auto">
+              <div key={idx} className="glass-card-gold p-8 text-center space-y-4 hover:border-[#FFD700] transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-[#FEF08A] border border-[#D4AF37] flex items-center justify-center text-[#856404] mx-auto shadow-sm">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 font-serif">{item.title}</h3>
-                <p className="text-zinc-600 text-xs leading-relaxed font-medium">{item.desc}</p>
+                <h3 className="text-xl font-bold text-stone-900 font-serif">{item.title}</h3>
+                <p className="text-stone-600 text-xs leading-relaxed font-semibold">{item.desc}</p>
               </div>
             );
           })}

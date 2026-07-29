@@ -13,9 +13,9 @@ export default function BrandLogos() {
   ];
 
   return (
-    <section className="py-12 bg-[#FAF4E6] border-y border-[rgba(217,119,6,0.15)] relative overflow-hidden">
+    <section className="py-12 bg-[#FEF9D7] border-y border-[rgba(212,175,55,0.3)] relative overflow-hidden">
       <div className="container">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-[#B45309] mb-8">
+        <p className="text-center text-xs font-extrabold uppercase tracking-[0.3em] text-[#856404] mb-8">
           Spezialisiert auf Reparatur, Service & Handel aller Premium-Marken
         </p>
 
@@ -23,12 +23,12 @@ export default function BrandLogos() {
           {brands.map((brand, idx) => (
             <div 
               key={idx}
-              className="p-4 rounded-xl bg-[#FDFBF7] border border-amber-500/20 hover:border-[#D97706] hover:shadow-md transition-all duration-300 text-center group cursor-default"
+              className="p-4 rounded-xl bg-[#FFFDF0] border border-[#D4AF37]/30 hover:border-[#FFD700] hover:shadow-lg hover:shadow-yellow-500/10 hover:-translate-y-1 transition-all duration-300 text-center group cursor-default"
             >
-              <span className="block font-serif text-sm font-bold text-zinc-800 group-hover:text-[#B45309] transition-colors tracking-wider">
+              <span className="block font-serif text-sm font-bold text-stone-800 group-hover:text-[#856404] transition-colors tracking-wider">
                 {brand.name}
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-zinc-500 block mt-0.5 font-semibold">
+              <span className="text-[9px] uppercase tracking-widest text-stone-500 block mt-0.5 font-bold">
                 {brand.subtitle}
               </span>
             </div>
