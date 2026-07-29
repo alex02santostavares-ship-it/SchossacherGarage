@@ -42,7 +42,7 @@ export default function Navbar() {
               SCHOSSACHER
             </span>
             <span className="text-[11px] uppercase tracking-[0.25em] text-[#785E07] font-extrabold block mt-1">
-              GARAGE & AUTOHANDEL
+              GARAGE & AUTOHANDEL • DÜBENDORF
             </span>
           </div>
         </a>
@@ -62,13 +62,13 @@ export default function Navbar() {
 
         {/* Action Button & Hotline */}
         <div className="hidden lg:flex items-center gap-6">
-          <a href="tel:+41791234567" className="flex items-center gap-3 text-xs font-bold text-stone-800 hover:text-[#785E07] transition-colors text-decoration-none">
+          <a href="tel:0448207474" className="flex items-center gap-3 text-xs font-bold text-stone-800 hover:text-[#785E07] transition-colors text-decoration-none">
             <div className="w-9 h-9 rounded-full bg-[#FEF08A] border border-[#D4AF37] flex items-center justify-center text-[#785E07]">
               <Phone className="w-4 h-4" />
             </div>
             <div>
-              <span className="block text-[9px] text-[#785E07] uppercase tracking-widest font-extrabold">Hotline Aarau</span>
-              <span className="font-mono text-stone-900 text-sm font-bold">+41 (0) 79 123 45 67</span>
+              <span className="block text-[9px] text-[#785E07] uppercase tracking-widest font-extrabold">Hotline Dübendorf</span>
+              <span className="font-mono text-stone-900 text-sm font-bold">044 820 74 74</span>
             </div>
           </a>
 
@@ -102,9 +102,9 @@ export default function Navbar() {
             </a>
           ))}
           <div className="pt-2 flex flex-col gap-3">
-            <a href="tel:+41791234567" className="btn-outline-gold justify-center text-xs py-3 text-decoration-none">
+            <a href="tel:0448207474" className="btn-outline-gold justify-center text-xs py-3 text-decoration-none">
               <Phone className="w-4 h-4 text-[#785E07]" />
-              +41 (0) 79 123 45 67
+              044 820 74 74
             </a>
             <a href="/kontakt" onClick={() => setMobileMenuOpen(false)} className="btn-gold justify-center text-xs py-3 text-decoration-none">
               <Car className="w-4 h-4" />

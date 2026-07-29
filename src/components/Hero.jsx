@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ArrowRight, Wrench, Car, Clock, Sparkles } from 'lucide-react';
+import { Award, ArrowRight, Wrench, Car, Clock, Sparkles, Star } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hero.jpg"
-          alt="Schossacher Garage Werkstatt"
+          alt="Schossacher Garage Werkstatt Dübendorf"
           className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF5] via-[#FFFDF5]/85 to-[#FFFDF5]/50"></div>
@@ -25,15 +25,15 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <div className="gold-badge shadow-sm">
                 <Award className="w-4 h-4 text-[#785E07]" />
-                <span>Schweizer Meisterbetrieb & Autohandel</span>
+                <span>Autowerkstatt & Autohandel Dübendorf</span>
               </div>
               <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FEF08A] border border-[#D4AF37] text-[#785E07] text-xs font-extrabold">
                 <span className="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-                <span>Werkstatt Geöffnet • Aarau</span>
+                <span>Werkstatt Geöffnet • Im Schossacher 22</span>
               </div>
             </div>
 
-            {/* Main Title (Clean, no seal, spacious) */}
+            {/* Main Title */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1C1917] leading-[1.08]">
               Schweizer Präzision für Ihr Fahrzeug.{' '}
               <span className="text-gold-gradient font-serif block mt-3">
@@ -43,7 +43,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg md:text-xl text-stone-700 font-semibold leading-relaxed max-w-2xl">
-              Ihre zertifizierte Meisterwerkstatt für professionelle Reparaturen, Inspektion & MFK-Vorbereitung sowie Ihr vertrauensvoller Partner für den An- & Verkauf exklusiver Fahrzeuge.
+              Ihre zertifizierte Meisterwerkstatt in Dübendorf (Zürich) für professionelle Reparaturen, Inspektion & MFK-Vorbereitung sowie An- & Verkauf gepflegter Fahrzeuge.
             </p>
 
             {/* Action Buttons */}
@@ -63,8 +63,8 @@ export default function Hero() {
             {/* Highlights Grid */}
             <div className="pt-8 grid grid-cols-3 gap-6 border-t border-[#D4AF37]/25 mt-8">
               <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-[#785E07] font-serif">15+ Jahre</span>
-                <span className="text-xs text-stone-600 font-bold">Erfahrung & Expertise</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-[#785E07] font-serif">4.3 / 5.0</span>
+                <span className="text-xs text-stone-600 font-bold">★★★★☆ 35 Google-Rezensionen</span>
               </div>
 
               <div>
@@ -73,8 +73,8 @@ export default function Hero() {
               </div>
 
               <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-[#785E07] font-serif">4.9 / 5.0</span>
-                <span className="text-xs text-stone-600 font-bold">★★★★★ 350+ Bewertungen</span>
+                <span className="block text-2xl sm:text-3xl font-extrabold text-[#785E07] font-serif">Dübendorf</span>
+                <span className="text-xs text-stone-600 font-bold">Im Schossacher 22</span>
               </div>
             </div>
           </div>
@@ -104,8 +104,8 @@ export default function Hero() {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-stone-900 block">Heute noch einen Termin?</span>
-                    <span className="text-[11px] text-stone-600 font-semibold">Schnelle Abwicklung in Aarau</span>
+                    <span className="text-xs font-bold text-stone-900 block">Termin in Dübendorf?</span>
+                    <span className="text-[11px] text-stone-600 font-semibold">Tel. 044 820 74 74</span>
                   </div>
                 </div>
                 <a href="/kontakt" className="btn-gold !py-2 !px-4 !text-xs text-decoration-none">
