@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ArrowRight, Wrench, Car, Clock, Sparkles } from 'lucide-react';
+import { Award, ArrowRight, Wrench, Car, Clock, Sparkles, ShieldCheck } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -37,16 +37,38 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Main Title */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1C1917] leading-[1.08]">
-              Schweizer Präzision für Ihr Fahrzeug.{' '}
-              <span className="text-gold-gradient font-serif block mt-3 drop-shadow-sm">
-                Schossacher Garage
-              </span>
-            </h1>
+            {/* Title with Embedded Swiss Precision Image on the Left */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              
+              {/* Integrated Image Box on Left side of Title */}
+              <div className="relative group flex-shrink-0">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#FFD700] via-[#D4AF37] to-[#B8860B] blur-sm opacity-80 group-hover:opacity-100 transition-all duration-300 animate-pulse"></div>
+                <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#FFD700] shadow-xl bg-[#FFFDF0]">
+                  <img 
+                    src="/images/swiss_precision.jpg" 
+                    alt="Schweizer Präzision Siegel" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-1 left-1 right-1 text-center bg-[#FFD700]/90 rounded py-0.5">
+                    <span className="text-[9px] font-extrabold uppercase text-black tracking-wider block">CH-QUALITÄT</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Title Copy */}
+              <div className="flex-1">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917] leading-[1.1]">
+                  Schweizer Präzision für Ihr Fahrzeug.{' '}
+                  <span className="text-gold-gradient font-serif block mt-2 drop-shadow-sm">
+                    Schossacher Garage
+                  </span>
+                </h1>
+              </div>
+            </div>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl text-stone-700 font-semibold leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-stone-700 font-semibold leading-relaxed max-w-2xl">
               Ihre zertifizierte Meisterwerkstatt für professionelle Reparaturen, Inspektion & MFK-Vorbereitung sowie Ihr vertrauensvoller Partner für den An- & Verkauf exklusiver Fahrzeuge.
             </p>
 
