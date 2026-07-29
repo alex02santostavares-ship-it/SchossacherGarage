@@ -2,11 +2,15 @@
   "name": "schossacher-garage",
   "type": "module",
   "version": "1.0.0",
+  "bin": {
+    "wrangler": "./bin/wrangler.js"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "deploy": "astro build",
+    "wrangler": "node ./bin/wrangler.js",
     "preview": "astro preview",
     "astro": "astro"
   },
