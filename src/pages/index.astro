@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.jsx';
 import Navbar from '../components/Navbar.jsx';
 import Hero from '../components/Hero.jsx';
+import BrandLogos from '../components/BrandLogos.jsx';
 import Services from '../components/Services.jsx';
 import Showroom from '../components/Showroom.jsx';
+import FinanceCalculator from '../components/FinanceCalculator.jsx';
 import AnkaufCalculator from '../components/AnkaufCalculator.jsx';
 import WhyUs from '../components/WhyUs.jsx';
 import Testimonials from '../components/Testimonials.jsx';
@@ -11,12 +14,15 @@ import ContactSection from '../components/ContactSection.jsx';
 import Footer from '../components/Footer.jsx';
 ---
 
-<Layout title="Schossacher Garage | Erstklassige Werkstatt & Autohandel">
+<Layout title="Schossacher Garage | Erstklassige Schweizer Werkstatt & Autohandel">
+  <Preloader client:load />
   <main>
     <Navbar client:load />
     <Hero client:load />
+    <BrandLogos client:visible />
     <Services client:visible />
     <Showroom client:visible />
+    <FinanceCalculator client:visible />
     <AnkaufCalculator client:visible />
     <WhyUs client:visible />
     <Testimonials client:visible />
