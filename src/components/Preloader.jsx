@@ -67,9 +67,8 @@ export default function Preloader() {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <div className="flex justify-between items-center text-xs font-mono font-bold">
-            <span className="text-stone-300">Systeme werden geladen...</span>
-            <span className="text-white font-extrabold">{progress}%</span>
+          <div className="text-center text-sm font-mono font-extrabold text-white tracking-wider">
+            {progress}%
           </div>
         </div>
       </div>
