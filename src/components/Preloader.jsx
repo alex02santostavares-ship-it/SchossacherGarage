@@ -2,15 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Wrench, Sparkles } from 'lucide-react';
 
 export default function Preloader() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('schossacher_preloader_shown');
+    }
+    return true;
+  });
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (!loading) return;
+
     const intervalTime = 18; // 18ms * 100 steps = 1.8s + 200ms fade = 2s total
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
+          try {
+            sessionStorage.setItem('schossacher_preloader_shown', 'true');
+          } catch (e) {}
           setTimeout(() => setLoading(false), 200);
           return 100;
         }
@@ -19,7 +29,7 @@ export default function Preloader() {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [loading]);
 
   if (!loading) return null;
 
