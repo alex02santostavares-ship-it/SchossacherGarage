@@ -3,35 +3,24 @@ import { Wrench, Sparkles } from 'lucide-react';
 
 export default function Preloader() {
   const [mounted, setMounted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     setMounted(true);
-    try {
-      const shown = sessionStorage.getItem('schossacher_preloader_shown');
-      if (!shown) {
-        setLoading(true);
-        const intervalTime = 18; // 18ms * 100 steps = 1.8s + 200ms fade = 2s total
-        const timer = setInterval(() => {
-          setProgress((prev) => {
-            if (prev >= 100) {
-              clearInterval(timer);
-              try {
-                sessionStorage.setItem('schossacher_preloader_shown', 'true');
-              } catch (e) {}
-              setTimeout(() => setLoading(false), 200);
-              return 100;
-            }
-            return prev + 1;
-          });
-        }, intervalTime);
+    const intervalTime = 18; // 18ms * 100 steps = 1.8s + 200ms fade = 2s total
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setTimeout(() => setLoading(false), 200);
+          return 100;
+        }
+        return prev + 1;
+      });
+    }, intervalTime);
 
-        return () => clearInterval(timer);
-      }
-    } catch (e) {
-      setLoading(false);
-    }
+    return () => clearInterval(timer);
   }, []);
 
   if (!mounted || !loading) return null;

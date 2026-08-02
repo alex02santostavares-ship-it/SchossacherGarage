@@ -3,12 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.jsx';
 import ContactSection from '../components/ContactSection.jsx';
 import Footer from '../components/Footer.jsx';
-import Preloader from '../components/Preloader.jsx';
 import { MapPin } from 'lucide-react';
 ---
 
 <Layout title="Kontakt & Anfahrt | Schossacher Garage Schweiz">
-  <Preloader client:load />
   <Navbar client:load />
 
   <main class="pt-28 pb-16 bg-transparent">
