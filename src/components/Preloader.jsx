@@ -6,12 +6,12 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const intervalTime = 48; // 48ms * 100 steps = 4.8s + 200ms fade = 5s total
+    const intervalTime = 18; // 18ms * 100 steps = 1.8s + 200ms fade = 2s total
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => setLoading(false), 300);
+          setTimeout(() => setLoading(false), 200);
           return 100;
         }
         return prev + 1;
