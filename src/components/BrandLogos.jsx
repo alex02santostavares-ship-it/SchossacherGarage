@@ -13,9 +13,12 @@ export default function BrandLogos() {
   ];
 
   return (
-    <section className="py-12 bg-[#FEF9D7] border-y border-[rgba(212,175,55,0.3)] relative overflow-hidden">
-      <div className="container">
-        <p className="text-center text-xs font-extrabold uppercase tracking-[0.3em] text-[#856404] mb-8">
+    <section className="py-14 relative bg-transparent border-y border-[#D4AF37]/15 overflow-hidden">
+      {/* Background Soft Glow */}
+      <div className="absolute inset-0 bg-radial from-white/5 via-transparent to-transparent pointer-events-none"></div>
+
+      <div className="container relative z-10">
+        <p className="text-center text-[11px] font-extrabold uppercase tracking-[0.3em] text-[#FFD700] mb-8">
           Spezialisiert auf Reparatur, Service & Handel aller Premium-Marken
         </p>
 
@@ -23,12 +26,12 @@ export default function BrandLogos() {
           {brands.map((brand, idx) => (
             <div 
               key={idx}
-              className="p-4 rounded-xl bg-[#FFFDF0] border border-[#D4AF37]/30 hover:border-[#FFD700] hover:shadow-lg hover:shadow-yellow-500/10 hover:-translate-y-1 transition-all duration-300 text-center group cursor-default"
+              className="p-4 rounded-xl glass-card-gold hover:border-[#FFD700] hover:shadow-[0_0_25px_rgba(255,215,0,0.15)] hover:-translate-y-1 transition-all duration-300 text-center group cursor-default"
             >
-              <span className="block font-serif text-sm font-bold text-stone-800 group-hover:text-[#856404] transition-colors tracking-wider">
+              <span className="block font-serif text-sm font-bold text-stone-200 group-hover:text-[#FFD700] transition-colors tracking-wider">
                 {brand.name}
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-stone-500 block mt-0.5 font-bold">
+              <span className="text-[9px] uppercase tracking-widest text-stone-400 block mt-1 font-bold group-hover:text-stone-300">
                 {brand.subtitle}
               </span>
             </div>

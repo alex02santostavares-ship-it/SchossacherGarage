@@ -6,9 +6,9 @@
 
 :root {
   /* Ultra-Luxury Seamless Dark Obsidian & Gold Palette */
-  --bg-primary: #060709;
-  --bg-secondary: #090B10;
-  --bg-card: rgba(15, 19, 30, 0.7);
+  --bg-primary: #050608;
+  --bg-secondary: #08090C;
+  --bg-card: rgba(12, 14, 20, 0.75);
 
   --gold-pure: #FFD700;
   --gold-metallic: #E6C200;
@@ -35,7 +35,7 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  background-color: #060709;
+  background-color: #050608;
   color: var(--text-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -45,13 +45,40 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-family: var(--font-sans);
-  background-color: #060709;
+  background-color: #050608;
   background-image: 
-    radial-gradient(ellipse at 15% 15%, rgba(212, 175, 55, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 50%, rgba(197, 160, 40, 0.05) 0%, transparent 60%),
-    radial-gradient(ellipse at 30% 85%, rgba(255, 215, 0, 0.06) 0%, transparent 60%);
+    /* Iconic White / Silver Beam Glow at Top (Schwarz mit weissem Stich) */
+    radial-gradient(ellipse 1300px 700px at 50% -100px, rgba(255, 255, 255, 0.12), transparent 70%),
+    radial-gradient(ellipse 700px 350px at 50% 50px, rgba(255, 255, 255, 0.08), transparent 60%),
+    
+    /* Continuous White Ambient Spotlights across full page height */
+    radial-gradient(circle 900px at 85% 700px, rgba(255, 255, 255, 0.045), transparent 70%),
+    radial-gradient(circle 900px at 15% 1600px, rgba(255, 255, 255, 0.05), transparent 70%),
+    radial-gradient(circle 950px at 80% 2500px, rgba(255, 255, 255, 0.045), transparent 70%),
+    radial-gradient(circle 900px at 20% 3400px, rgba(255, 255, 255, 0.04), transparent 70%),
+    radial-gradient(circle 900px at 75% 4300px, rgba(255, 255, 255, 0.04), transparent 70%),
+
+    /* Warm Luxury Gold Highlights */
+    radial-gradient(circle 750px at 25% 450px, rgba(212, 175, 55, 0.07), transparent 70%),
+    radial-gradient(circle 850px at 80% 1200px, rgba(212, 175, 55, 0.05), transparent 70%),
+    radial-gradient(circle 800px at 25% 2100px, rgba(212, 175, 55, 0.06), transparent 70%),
+    radial-gradient(circle 850px at 75% 3000px, rgba(212, 175, 55, 0.05), transparent 70%);
+
   background-attachment: fixed;
   color: #F8FAFC;
+  position: relative;
+}
+
+/* Subtle Micro Grid / Mesh Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
 }
 
 /* Custom Scrollbar */

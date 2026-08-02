@@ -181,7 +181,7 @@ export default function Showroom() {
   };
 
   return (
-    <section id="showroom" className="section-padding relative bg-[#07080A]">
+    <section id="showroom" className="section-padding relative bg-transparent">
       <div className="container">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
